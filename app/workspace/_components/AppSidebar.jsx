@@ -15,6 +15,7 @@ import {
 import { BookIcon, BrainIcon, CompassIcon, LayoutDashboard, PencilRulerIcon, UserCircle2Icon, WalletCardsIcon } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import AddNewCourseDialog from "./AddNewCourseDialog"
 
 const SideBarOptions = [
     {
@@ -53,7 +54,7 @@ const SideBarOptions = [
 
 function AppSidebar() {
 
-const path = usePathname()
+    const path = usePathname()
 
     return (
         <Sidebar>
@@ -62,8 +63,9 @@ const path = usePathname()
             </SidebarHeader>
             <SidebarContent>
                 <SidebarGroup >
-                    <Button>Create New Course</Button>
-
+                    <AddNewCourseDialog>
+                        <Button>Create New Course</Button>
+                    </AddNewCourseDialog>
                 </SidebarGroup>
                 <SidebarGroup>
                     <SidebarGroupContent>
@@ -71,8 +73,8 @@ const path = usePathname()
                             {SideBarOptions.map((item, index) => (
                                 <SidebarMenuItem key={index}>
                                     <SidebarMenuButton asChild className={'p-5'}>
-                                        <Link className={`text-[17px] ${path.includes(item.path)&&'font-bold'}`} href={item.path}>
-                                            <item.icon className="h-7 w-7"/>
+                                        <Link className={`text-[17px] ${path.includes(item.path) && 'font-bold'}`} href={item.path}>
+                                            <item.icon className="h-7 w-7" />
                                             <span>
                                                 {item.title}
                                             </span>
