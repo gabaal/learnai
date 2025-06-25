@@ -44,11 +44,11 @@ const onHandleInputChange = (field, value) => {
         ...prev,
         [field]: value,
     }))
-    console.log(formData)
+   
   }
 
   const onGenerate = async () => {
-    console.log(formData)
+    
     const courseId = uuidv4()
     try {
     setLoading(true)
@@ -56,7 +56,7 @@ const onHandleInputChange = (field, value) => {
       ...formData,
       courseId:courseId
     })
-    console.log(result.data)
+   
     setLoading(false)
     router.push(`/workspace/edit-course/`+result.data?.courseId)
   }

@@ -14,7 +14,7 @@ function CourseList() {
             {courseList?.length == 0
                 ? <div className="flex items-center justify-center p-7 flex-col border rounded-xl mt-2 bg-secondary">
                     <Image src={'/online-education.png'} alt={'No courses found'} width={80} height={80} />
-                    <h2 className="my-2 text-xl font-bold">Looks like you havn&apos;t created any courses yet</h2>
+                    <h2 className="my-2 text-xl font-bold">Looks like you haven&apos;t created any courses yet</h2>
                     <AddNewCourseDialog>
                     <Button>Create your first course</Button></AddNewCourseDialog>
                 </div>
