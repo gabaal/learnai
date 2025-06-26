@@ -1,13 +1,13 @@
 'use client'
 import { Button } from "@/components/ui/button"
 import axios from "axios"
-import { BookIcon, ClockIcon, Loader2Icon, SparkleIcon, TrendingUpIcon } from "lucide-react"
+import { BookIcon, ClockIcon, Loader2Icon, PlayCircleIcon, SparkleIcon, TrendingUpIcon } from "lucide-react"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { toast } from "sonner"
 
-function CourseInfo({course}) {
+function CourseInfo({course, viewCourse}) {
     const courseLayout = course?.courseJson?.course
     const [loading,setLoading] = useState(false)
     const router = useRouter()
@@ -61,8 +61,9 @@ setLoading(true)
                 </section>
             </div>
         </div>
+        {!viewCourse ?
         <Button disabled={loading} onClick = {GenerateCourseContent}>{loading ? <Loader2Icon className="animate-spin"/> :
-        <SparkleIcon/>} Generate Content</Button>
+        <SparkleIcon/>} Generate Content</Button> : <Button><PlayCircleIcon/> Continue Learning</Button>}
 
 
     </div>
