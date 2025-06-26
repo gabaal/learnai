@@ -17,13 +17,12 @@ useEffect (()=> {user && GetCourseList()}, [user])
 
 const GetCourseList = async () => {
     const result = await axios.get('/api/courses')
-    console.log(result.data)
     setCourseList(result.data)
 }
 
     return (
         <div className="mt-10">
-            <h2 className="font-bold text-3xl">Course List</h2>
+            <h2 className="font-bold text-2xl mb-3">Course List</h2>
             {courseList?.length == 0
                 ? <div className="flex items-center justify-center p-7 flex-col border rounded-xl mt-2 bg-secondary">
                     <Image src={'/online-education.png'} alt={'No courses found'} width={80} height={80} />
