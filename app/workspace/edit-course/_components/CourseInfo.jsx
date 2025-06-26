@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import axios from "axios"
 import { BookIcon, ClockIcon, Loader2Icon, PlayCircleIcon, SparkleIcon, TrendingUpIcon } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { toast } from "sonner"
@@ -63,7 +64,7 @@ setLoading(true)
         </div>
         {!viewCourse ?
         <Button disabled={loading} onClick = {GenerateCourseContent}>{loading ? <Loader2Icon className="animate-spin"/> :
-        <SparkleIcon/>} Generate Content</Button> : <Button><PlayCircleIcon/> Continue Learning</Button>}
+        <SparkleIcon/>} Generate Content</Button> :<Link href={'/course/'+course?.cid}><Button><PlayCircleIcon/> Continue Learning</Button></Link>}
 
 
     </div>
