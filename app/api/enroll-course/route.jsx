@@ -43,3 +43,15 @@ else{
 
     return NextResponse.json(result)
 }}
+
+export async function PUT(req) {
+    const {completedChapter, courseId} = await req.json();
+    const user = await currentUser();
+
+    const result = await db.update(enrollCourseTable)
+    .set({
+        completedChapters: completedChapter
+    }).where(and(eq(enrollCourseTable.userEmail, user?.primaryEmailAddress?.emailAddress), eq(enrollCourseTable.cid, courseId))).returning(enrollCourseTable)
+
+    return NextResponse.json(result)
+}

@@ -21,12 +21,12 @@ const SideBarOptions = [
     {
         title: 'Dashboard',
         icon: LayoutDashboard,
-        path: '/workspace',
+        path: '/workspace/#',
     },
     {
         title: 'My Learning',
         icon: BookIcon,
-        path: '/workspace/my-courses',
+        path: '/workspace/my-learning',
     },
     {
         title: 'Explore Courses',
