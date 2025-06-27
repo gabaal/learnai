@@ -30,10 +30,9 @@ function ChapterContent({courseInfo}) {
        </div>
 
 <div className="mt-7">
-{topics.map((topic, index) => (
+{topics?.map((topic, index) => (
   <div key={index} className="mt-10 p-5 bg-secondary rounded-2xl">
     <h2 className="font-bold text-2xl">{index+1}. {topic?.Topic}</h2>
-    {/* <p>{topic?.Content}</p> */}
     <div dangerouslySetInnerHTML={{ __html: topic?.Content }}
     style={{
       lineHeight:'2.5'
